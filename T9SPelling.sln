@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9SPelling", "T9SPelling\T9SPelling.csproj", "{13A60353-CDCC-494C-A142-3696488BEC13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9Spelling.Tests", "T9Spelling.Tests\T9Spelling.Tests.csproj", "{A5A0A8AE-C507-48F5-988F-22B30542C8EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9Spelling.Lib", "T9Spelling.Lib\T9Spelling.Lib.csproj", "{D42916E0-34BC-4D13-B19D-58CADAA9EFF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13A60353-CDCC-494C-A142-3696488BEC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A60353-CDCC-494C-A142-3696488BEC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A60353-CDCC-494C-A142-3696488BEC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A60353-CDCC-494C-A142-3696488BEC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A0A8AE-C507-48F5-988F-22B30542C8EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A0A8AE-C507-48F5-988F-22B30542C8EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A0A8AE-C507-48F5-988F-22B30542C8EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A0A8AE-C507-48F5-988F-22B30542C8EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42916E0-34BC-4D13-B19D-58CADAA9EFF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42916E0-34BC-4D13-B19D-58CADAA9EFF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42916E0-34BC-4D13-B19D-58CADAA9EFF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42916E0-34BC-4D13-B19D-58CADAA9EFF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
