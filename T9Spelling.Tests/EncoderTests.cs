@@ -1,21 +1,18 @@
 using System;
+using System.Text;
 using Moq;
 using T9Spelling.Lib.Domain;
-using T9Spelling.Lib.Domain.AdatersInterfaces;
 using Xunit;
 
 namespace T9SPelling.tests
 {
     public class EncoderTests
     {
-        private readonly Encoder _encoder;
+        private readonly EnglishT9Encoder _encoder;
 
         public EncoderTests()
         {
-            var adapter = new Mock<ICodeAdapter>();
-            adapter.Setup(a => a.Get('a')).Returns("11");
-            adapter.Setup(a => a.Get('b')).Returns("22");
-            _encoder = new Encoder(adapter.Object);
+            _encoder = new EnglishT9Encoder();
         }
 
         [Fact]
@@ -25,15 +22,15 @@ namespace T9SPelling.tests
             {
                 ("b", "Case #1: 22"),
                 ("bb", "Case #2: 22 22"),
-                ("ab", "Case #3: 1122")
+                ("db", "Case #3: 322")
             };
             
             foreach (var (input, output) in values)
             {
                 //Act
-                var result = _encoder.Encode(input);
+                var result = _encoder.Encode(new Line( input));
                 //Assert
-                Assert.Equal(result, output);
+                Assert.Equal(result.Value, output);
             }
         }
 

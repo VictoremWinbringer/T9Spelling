@@ -1,13 +1,15 @@
 using System.Collections.Generic;
-using T9Spelling.Lib.Domain.AdatersInterfaces;
+using System.Text;
 
-namespace T9Spelling.Lib.Adapters
+namespace T9Spelling.Lib.Domain
 {
-    public class EnglishCodeAdapter : ICodeAdapter
+    public class EnglishT9Encoder : IEncoder
     {
         private readonly Dictionary<char, string> _dictionary;
+        private readonly StringBuilder _sb;
+        private int _lineNumber;
 
-        public EnglishCodeAdapter()
+        public EnglishT9Encoder()
         {
             _dictionary = new Dictionary<char, string>()
             {
@@ -39,11 +41,24 @@ namespace T9Spelling.Lib.Adapters
                 ['y'] = "999",
                 ['z'] = "9999",
             };
+            _sb = new StringBuilder();
+            _lineNumber = 1;
         }
 
-        public string Get(char key)
+        public Line Encode(Line line)
         {
-            return _dictionary[key];
+            _sb.Clear();
+            _sb.Append($"Case #{_lineNumber.ToString()}: ");
+            _lineNumber++;
+            foreach (var c in line.Value)
+            {
+                var code = _dictionary[c];
+                if (_sb[_sb.Length - 1] == code[0])
+                    _sb.Append(" ");
+                _sb.Append(code);
+            }
+
+            return new Line(_sb.ToString());
         }
     }
 }

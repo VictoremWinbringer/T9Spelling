@@ -1,14 +1,15 @@
 using System.IO;
-using T9Spelling.Lib.Domain.AdatersInterfaces;
+using T9Spelling.Lib.Domain;
+using T9Spelling.Lib.UseCase;
 
-namespace T9Spelling.Lib.Adapters
+namespace T9Spelling.Lib.Infrastructure
 {
-    public class TextFileLinesAdapter : ILinesAdapter
+    public class TextFileLinesRepository : ILinesRepository
     {
         private readonly StreamReader _reader;
         private readonly StreamWriter _writer;
 
-        public TextFileLinesAdapter(string inPath, string outPath)
+        public TextFileLinesRepository(string inPath, string outPath)
         {
             _reader = new StreamReader(File.Open(inPath, FileMode.Open, FileAccess.Read));
             _writer = new StreamWriter(File.Open(outPath, FileMode.Create, FileAccess.Write));
@@ -20,12 +21,12 @@ namespace T9Spelling.Lib.Adapters
             _writer.Dispose();
         }
 
-        public string ReadLine()
+        public Line ReadLine()
         {
-            return _reader.ReadLine();
+            return new Line( _reader.ReadLine());
         }
 
-        public void WriteLine(string line)
+        public void WriteLine(Line line)
         {
             _writer.WriteLine(line);
         }
@@ -33,11 +34,11 @@ namespace T9Spelling.Lib.Adapters
         public bool LinesAreOver => _reader.EndOfStream;
     }
 
-    public class TextLinesAdapterFactory : ILinesAdapterFactory
+    public class TextLinesRepositoryFactory : ILinesRepositoryFactory
     {
-        public ILinesAdapter Create(string inPath, string outPath)
+        public ILinesRepository Create(string inPath, string outPath)
         {
-            return new TextFileLinesAdapter(inPath, outPath);
+            return new TextFileLinesRepository(inPath, outPath);
         }
     }
 }

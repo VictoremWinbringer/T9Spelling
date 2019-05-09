@@ -1,7 +1,8 @@
 
 using System.IO;
-using T9Spelling.Lib.Adapters;
 using T9Spelling.Lib.Domain;
+using T9Spelling.Lib.Infrastructure;
+using T9Spelling.Lib.UseCase;
 using Xunit;
 
 namespace T9SPelling.tests
@@ -13,7 +14,7 @@ namespace T9SPelling.tests
         public void Translate()
         {
             var translator =
-                new T9Translator(new TextLinesAdapterFactory(), new EncoderFactory(new EnglishCodeAdapter()));
+                new EncoderService(new TextLinesRepositoryFactory(), new EnglishT9EncoderRepository());
             var inFile = "./in.txt";
             var outFile = "./out.txt";
             

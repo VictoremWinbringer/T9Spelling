@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9SPelling", "T9SPelling\T9SPelling.csproj", "{13A60353-CDCC-494C-A142-3696488BEC13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9SPelling.UI.Console", "T9SPelling.UI.Console\T9SPelling.UI.Console.csproj", "{13A60353-CDCC-494C-A142-3696488BEC13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T9Spelling.Tests", "T9Spelling.Tests\T9Spelling.Tests.csproj", "{A5A0A8AE-C507-48F5-988F-22B30542C8EE}"
 EndProject
